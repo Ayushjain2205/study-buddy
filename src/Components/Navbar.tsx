@@ -11,11 +11,7 @@ export function NavbarComponent() {
           <Link to="/" style={{ textDecoration: "none", marginRight: "40px" }}>
             <Navbar.Brand>StudyBuddy</Navbar.Brand>
           </Link>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
+          <Nav className="me-auto"></Nav>
         </Container>
       </Navbar>
     </>
