@@ -9,7 +9,9 @@ export function NavbarComponent() {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Link to="/" style={{ textDecoration: "none", marginRight: "40px" }}>
-            <Navbar.Brand>StudyBuddy</Navbar.Brand>
+            <Navbar.Brand>
+              <i className="fa-solid fa-book-open-reader"></i>&nbsp; StudyBuddy
+            </Navbar.Brand>
           </Link>
           <Nav className="me-auto"></Nav>
         </Container>

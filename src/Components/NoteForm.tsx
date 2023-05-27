@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import CreatableReactSelect from "react-select/creatable";
 import { NoteData, Tag } from "../App";
 import { v4 as uuidV4 } from "uuid";
+import FileButton from "./FileButton";
 
 type NoteFormProps = {
   onSubmit: (data: NoteData) => void;
@@ -90,13 +91,28 @@ export function NoteForm({
             </FormGroup>
           </Col>
         </Row>
+        <FileButton />
+        <FormGroup controlId="markdown">
+          <Form.Label>Prompt</Form.Label>
+          <Form.Control
+            required
+            as="textarea"
+            rows={3}
+            placeholder="Enter your prompt here"
+          />
+        </FormGroup>
+        <Stack direction="horizontal" gap={2} className="justify-content-end">
+          <Button variant="primary" type="button">
+            Generate
+          </Button>
+        </Stack>
         <FormGroup controlId="markdown">
           <Form.Label>Body</Form.Label>
           <Form.Control
             ref={markdownRef}
             required
             as="textarea"
-            rows={15}
+            rows={10}
             defaultValue={markdown}
           />
         </FormGroup>
