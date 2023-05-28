@@ -36,6 +36,48 @@ export function NoteForm({
     navigate("..");
   }
 
+  const handleClick = () => {
+    setTimeout(() => {
+      if (markdownRef.current) {
+        markdownRef.current.value = data;
+      }
+    }, 3000);
+  };
+
+  const data = `
+# Trigonometric Functions
+
+Trigonometric functions are mathematical functions that relate angles of a right triangle to the ratios of the triangle's sides. They are widely used in various fields such as physics, engineering, and mathematics.
+
+## Sine Function (sin), Cosine Function (cos), Tangent Function (tan)
+
+The sine function (sin), cosine function (cos), and tangent function (tan) are the primary trigonometric functions:
+
+- The sine function, denoted as sin(θ), gives the ratio of the length of the side opposite the angle θ to the length of the hypotenuse in a right triangle.
+- The cosine function, denoted as cos(θ), gives the ratio of the length of the adjacent side to the length of the hypotenuse in a right triangle.
+- The tangent function, denoted as tan(θ), gives the ratio of the length of the side opposite the angle θ to the length of the adjacent side in a right triangle.
+
+\`\`\`
+sin(θ) = Opposite / Hypotenuse
+cos(θ) = Adjacent / Hypotenuse
+tan(θ) = Opposite / Adjacent
+\`\`\`
+
+## Cosecant Function (csc), Secant Function (sec), Cotangent Function (cot)
+
+The cosecant function (csc), secant function (sec), and cotangent function (cot) are the reciprocals of the sine, cosine, and tangent functions, respectively:
+
+\`\`\`
+csc(θ) = 1 / sin(θ)
+sec(θ) = 1 / cos(θ)
+cot(θ) = 1 / tan(θ)
+\`\`\`
+
+These trigonometric functions play a fundamental role in solving triangle-related problems, analyzing periodic phenomena, and modeling waveforms. Understanding their properties and relationships is essential for various mathematical applications.
+
+Remember to practice and explore more examples to strengthen your understanding of trigonometric functions!
+`;
+
   return (
     <Form onSubmit={handleSubmit}>
       <Stack gap={4}>
@@ -102,7 +144,7 @@ export function NoteForm({
           />
         </FormGroup>
         <Stack direction="horizontal" gap={2} className="justify-content-end">
-          <Button variant="primary" type="button">
+          <Button variant="primary" type="button" onClick={handleClick}>
             Generate
           </Button>
         </Stack>

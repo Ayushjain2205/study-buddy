@@ -11,6 +11,7 @@ import { NoteLayout } from "./Components/NoteLayout";
 import { Note } from "./Components/Note";
 import { EditNote } from "./Components/EditNote";
 import { NavbarComponent } from "./Components/Navbar";
+import { Landing } from "./Components/Landing";
 
 export type Note = {
   id: string;
@@ -104,6 +105,7 @@ function App() {
       <NavbarComponent />
       <Container className="my-4">
         <Routes>
+          <Route path="/landing" element={<Landing />} />
           <Route
             path="/"
             element={
